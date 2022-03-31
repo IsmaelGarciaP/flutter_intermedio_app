@@ -6,4 +6,5 @@ abstract class AuthenticationRepository{
   Future<bool>? register(User user);
   Future<bool>? sendResetToken(String email);
 
+
 }
