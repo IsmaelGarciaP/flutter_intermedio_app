@@ -4,9 +4,6 @@ import 'package:flutter_intermedio_app/src/global_widgets/input_text.dart';
 import 'package:flutter_intermedio_app/src/global_widgets/rounded_button.dart';
 import 'package:flutter_intermedio_app/src/pages/register/register_controller.dart';
 import 'package:provider/provider.dart';
-
-import '../../../data/models/user.dart';
-import '../../../routes/routes.dart';
 import '../../../utils/dialogs.dart';
 
 class RegisterFrom extends StatelessWidget {
