@@ -41,7 +41,6 @@ class LoginPage extends StatelessWidget {
                         width: 200,
                       ),
                       LoginForm(),
-
                       SocialLogin(),
                     ],
                   ),

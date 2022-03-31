@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../global_widgets/circule_button.dart';
+import '../../../routes/routes.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({
@@ -43,7 +44,12 @@ class SocialLogin extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             const Text("Don't haven an acount?"),
-            CupertinoButton(child: const Text("Sing Up"), onPressed: () {}),
+            CupertinoButton(
+              child: const Text("Sing Up"),
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.REGISTER);
+              },
+            ),
           ],
         ),
         const SizedBox(height: 10),

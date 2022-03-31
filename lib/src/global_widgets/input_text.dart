@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_intermedio_app/src/utils/colors.dart';
 
 class InputText extends StatefulWidget {
-  final Widget prefixIcon;
+  final Widget? prefixIcon;
   final bool Function(String)? valiator;
   final bool obscureText;
   final void Function(String)? onChanged;
@@ -13,9 +13,13 @@ class InputText extends StatefulWidget {
 
   const InputText({
     Key? key,
-    required this.prefixIcon,
+    this.prefixIcon,
     this.valiator,
-    this.obscureText = false, this.onChanged, this.onSubmitted, this.textInputAction, this.keyboardType,
+    this.obscureText = false,
+    this.onChanged,
+    this.onSubmitted,
+    this.textInputAction,
+    this.keyboardType,
   }) : super(key: key);
 
   @override
@@ -38,7 +42,7 @@ class _InputTextState extends State<InputText> {
       setState(() {});
     }
 
-    if(widget.onChanged != null){
+    if (widget.onChanged != null) {
       widget.onChanged!(text);
     }
   }
