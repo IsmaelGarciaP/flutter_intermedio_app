@@ -5,11 +5,12 @@ import '../../data/providers/authentication_provider.dart';
 import '../../data/repositories/authentication_repository.dart';
 import '../../data/repositories_imaplematation/authentication_repository_impl.dart';
 import '../../global_widgets/custom_form.dart';
+import '../../helpers/get.dart';
 
 class RegisterController extends ChangeNotifier{
   String _email = "", _name = "",_lastname = "";
   GlobalKey<CustomFormState> formKey = GlobalKey();
-  final AuthenticationRepository _repository = AuthenticationRepositoryImpl(AuthenticationProvider());
+  final AuthenticationRepository _repository = Get.i.find<AuthenticationRepository>();
 
   void onEmailChanged(String text){
     _email = text;
