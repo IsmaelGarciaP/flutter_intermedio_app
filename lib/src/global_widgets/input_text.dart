@@ -4,15 +4,18 @@ import 'package:flutter_intermedio_app/src/utils/colors.dart';
 
 class InputText extends StatefulWidget {
   final Widget prefixIcon;
-  final bool Function(String) valiator;
+  final bool Function(String)? valiator;
   final bool obscureText;
-  final void Function(String) onChanged;
+  final void Function(String)? onChanged;
+  final void Function(String)? onSubmitted;
+  final TextInputAction? textInputAction;
+  final TextInputType? keyboardType;
 
   const InputText({
     Key? key,
     required this.prefixIcon,
-    required this.valiator,
-    this.obscureText = false, required this.onChanged,
+    this.valiator,
+    this.obscureText = false, this.onChanged, this.onSubmitted, this.textInputAction, this.keyboardType,
   }) : super(key: key);
 
   @override
@@ -31,12 +34,12 @@ class _InputTextState extends State<InputText> {
 
   void _validate(String text) {
     if (widget.valiator != null) {
-      _isOK = widget.valiator(text);
+      _isOK = widget.valiator!(text);
       setState(() {});
     }
 
     if(widget.onChanged != null){
-      widget.onChanged(text);
+      widget.onChanged!(text);
     }
   }
 
@@ -49,9 +52,12 @@ class _InputTextState extends State<InputText> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      textInputAction: widget.textInputAction,
       cursorColor: primaryColor,
       onChanged: _validate,
+      keyboardType: widget.keyboardType,
       obscureText: _obscureText,
+      onSubmitted: widget.onSubmitted,
       decoration: InputDecoration(
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.obscureText

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         primaryColor: primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: FontSyles.textTheme,
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           textTheme: CupertinoTextThemeData(
             textStyle: FontSyles.normal,
           ),
-        ),
+        ), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(secondary: primaryColor),
       ),
       initialRoute: Pages.INITIAL,
       routes: Pages.routes,

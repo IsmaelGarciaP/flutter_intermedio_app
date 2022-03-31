@@ -18,12 +18,7 @@ class LoginConrtoller extends ChangeNotifier {
     _password = text;
   }
 
-  void submit() async {
-    final User? user = await _repository.login(_email, _password);
-    if (user != null) {
-      print("Login ok");
-    } else {
-      print("Login failed");
-    }
+  Future<User?> submit() async {
+    return _repository.login(_email, _password);
   }
 }
