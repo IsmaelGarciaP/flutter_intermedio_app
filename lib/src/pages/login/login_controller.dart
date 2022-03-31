@@ -8,6 +8,10 @@ class LoginConrtoller extends ChangeNotifier {
   final _api = AuthenticationAIP();
 
   void onEmailChanged(String text) {
+    _email = text;
+  }
+
+  void onPasswordChanged(String text) {
     _password = text;
   }
 
@@ -16,7 +20,7 @@ class LoginConrtoller extends ChangeNotifier {
     if(user != null){
       print("Login ok");
     }else{
-      print("Lofin failed");
+      print("Login failed");
     }
   }
 }

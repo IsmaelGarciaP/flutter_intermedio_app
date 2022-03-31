@@ -41,14 +41,7 @@ class LoginPage extends StatelessWidget {
                         width: 200,
                       ),
                       LoginForm(),
-                      const SizedBox(height: 20),
-                      RoundedButton(
-                        onPressed: () {},
-                        label: "Login",
-                        fullWidth: false,
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 9, horizontal: 50),
-                      ),
+
                       SocialLogin(),
                     ],
                   ),
