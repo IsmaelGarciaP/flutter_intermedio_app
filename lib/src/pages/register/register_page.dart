@@ -16,6 +16,15 @@ class RegisterPage extends StatelessWidget {
           final padding = data.padding;
           final Size size = data.size;
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios),
+                color: Colors.black,
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
             body: SafeArea(
               child: GestureDetector(
                 onTap: () => FocusScope.of(context).unfocus(),

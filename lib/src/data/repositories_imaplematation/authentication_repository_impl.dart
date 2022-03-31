@@ -14,7 +14,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
 
   @override
   Future<bool>? register(User user) {
-    return null;
+    return _authenticationAIP.register(user);
   }
 
   @override

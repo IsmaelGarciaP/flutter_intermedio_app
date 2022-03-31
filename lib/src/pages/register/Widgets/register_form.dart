@@ -19,31 +19,21 @@ class RegisterFrom extends StatelessWidget {
       ProgressDialog.show(context);
       final isOK = await controller.submit();
       Navigator.pop(context);
-      if (!isOK) {
-        showDialog(
-          context: context,
-          builder: (_) => const AlertDialog(
-            title: Text("ERROR"),
-            content: Text("Register failed"),
-          ),
+      if (!isOK!) {
+        Dialogs.alert(
+          context,
+          titele: "ERROR",
+          description: "Register failed",
         );
       } else {
-        showDialog(
-          context: context,
-          builder: (_) => WillPopScope(
-            onWillPop: () async => false,
-            child: AlertDialog(
-              title: const Text("GOOD"),
-              content: const Text("Register Ok"),
-              actions: [
-                FlatButton(
-                    onPressed: () => Navigator.popUntil(context,
-                        (route) => route.settings.name == Routes.LOGIN),
-                    child: const Text("OK"))
-              ],
-            ),
-          ),
+        await Dialogs.alert(
+          context,
+          titele: "GOOD",
+          description: "Register Ok",
+          okText: "Go to login",
+          dissmisible: false,
         );
+        Navigator.pop(context);
       }
     } else {
       showDialog(

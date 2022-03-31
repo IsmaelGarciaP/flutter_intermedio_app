@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_intermedio_app/src/data/providers/authentication_provider.dart';
 import 'package:flutter_intermedio_app/src/data/repositories/authentication_repository.dart';
-import 'package:flutter_intermedio_app/src/data/repositories_imaplematation/authentication_repository.dart';
+import 'package:flutter_intermedio_app/src/data/repositories_imaplematation/authentication_repository_impl.dart';
 
 import '../../data/models/user.dart';
 
