@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 abstract class Dialogs {
@@ -8,15 +9,15 @@ abstract class Dialogs {
     String okText = "OK",
     bool dissmisible = true,
   }) async {
-    return showDialog(
+    return showCupertinoDialog(
       context: context,
       builder: (_) => WillPopScope(
         onWillPop: () async => dissmisible,
-        child: AlertDialog(
+        child: CupertinoAlertDialog(
           title: titele != null ? Text(titele) : null,
           content: description != null ? Text(description) : null,
           actions: [
-            TextButton(
+            CupertinoDialogAction(
               onPressed: () => Navigator.pop(context),
               child: Text(okText),
             ),
@@ -29,14 +30,19 @@ abstract class Dialogs {
 
 abstract class ProgressDialog {
   static Future<void> show(BuildContext context) {
-    return showDialog(
+    return showCupertinoModalPopup(
       context: context,
-      builder: (_) => Container(
-        width: double.infinity,
-        height: double.infinity,
-        alignment: Alignment.center,
-        color: Colors.white30,
-        child: const CircularProgressIndicator(),
+      builder: (_) => WillPopScope(
+        onWillPop: () async => false,
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          alignment: Alignment.center,
+          color: Colors.white30,
+          child: const CupertinoActivityIndicator(
+            radius: 15,
+          ),
+        ),
       ),
     );
   }
