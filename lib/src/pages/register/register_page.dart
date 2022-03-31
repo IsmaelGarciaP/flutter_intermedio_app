@@ -10,35 +10,46 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<RegisterController>(
-      create: (_) => RegisterController(),
-      builder: (_, __) => Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Container(
-              width: double.infinity,
-              child: Column(
-                children: [
-                  const SizedBox(height: 20),
-                  Text(
-                    "Sing Up",
-                    style: FontSyles.title.copyWith(
-                      fontSize: 22,
+        create: (_) => RegisterController(),
+        builder: (_, __) {
+          final MediaQueryData data = MediaQuery.of(_);
+          final padding = data.padding;
+          final Size size = data.size;
+          return Scaffold(
+            body: SafeArea(
+              child: GestureDetector(
+                onTap: () => FocusScope.of(context).unfocus(),
+                child: SingleChildScrollView(
+                  child: Container(
+                    width: double.infinity,
+                    constraints: BoxConstraints(
+                      minHeight: size.height - padding.top - padding.bottom,
+                    ),
+                    color: Colors.transparent,
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 20),
+                        Text(
+                          "Sing Up",
+                          style: FontSyles.title.copyWith(
+                            fontSize: 22,
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          "Fill the details & create your account",
+                          style: FontSyles.normal.copyWith(
+                              fontWeight: FontWeight.w600, color: Colors.grey),
+                        ),
+                        const SizedBox(height: 65),
+                        RegisterFrom(),
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 5),
-                  Text(
-                    "Fill the details & create your account",
-                    style: FontSyles.normal.copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.grey),
-                  ),
-                  const SizedBox(height: 65),
-                  RegisterFrom(),
-                ],
+                ),
               ),
             ),
-          ),
-        ),
-      ),
-    );
+          );
+        });
   }
 }

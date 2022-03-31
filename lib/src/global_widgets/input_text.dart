@@ -10,6 +10,7 @@ class InputText extends StatefulWidget {
   final void Function(String)? onSubmitted;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
+  final String? labelText;
 
   const InputText({
     Key? key,
@@ -19,7 +20,7 @@ class InputText extends StatefulWidget {
     this.onChanged,
     this.onSubmitted,
     this.textInputAction,
-    this.keyboardType,
+    this.keyboardType, this.labelText,
   }) : super(key: key);
 
   @override
@@ -63,6 +64,8 @@ class _InputTextState extends State<InputText> {
       obscureText: _obscureText,
       onSubmitted: widget.onSubmitted,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(vertical: 5),
+        labelText: widget.labelText,
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.obscureText
             ? CupertinoButton(

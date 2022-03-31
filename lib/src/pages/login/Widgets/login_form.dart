@@ -42,6 +42,7 @@ class LoginForm extends StatelessWidget {
           InputText(
             prefixIcon: const Icon(Icons.email_outlined),
             keyboardType: TextInputType.emailAddress,
+            labelText: "Email",
             valiator: (t) {
               return t.contains("@");
             },
@@ -52,6 +53,7 @@ class LoginForm extends StatelessWidget {
           InputText(
             prefixIcon: const Icon(Icons.lock_outline),
             obscureText: true,
+            labelText: "Password",
             onChanged: controller.onPasswordChanged,
             textInputAction: TextInputAction.send,
             onSubmitted: (text) => _submit(context),

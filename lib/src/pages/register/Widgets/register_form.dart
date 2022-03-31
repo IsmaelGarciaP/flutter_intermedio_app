@@ -15,16 +15,19 @@ class RegisterFrom extends StatelessWidget {
       child: Column(
         children: [
           InputText(
+            labelText: "Name",
             prefixIcon: const Icon(Icons.person_outline),
             onChanged: controller.onNameChanged,
           ),
           const SizedBox(height: 15),
           InputText(
+            labelText: "Last Name",
             prefixIcon: const Icon(Icons.person_add_outlined),
             onChanged: controller.onLastnameChanged,
           ),
           const SizedBox(height: 15),
           InputText(
+            labelText: "Email",
             prefixIcon: const Icon(Icons.email_outlined),
             onChanged: controller.onEmailChanged,
           ),
