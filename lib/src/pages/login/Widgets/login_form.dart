@@ -44,7 +44,7 @@ class LoginForm extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             labelText: "Email",
             valiator: (t) {
-              return t.contains("@");
+              return t.contains("@")? "":"Invalid email";
             },
             textInputAction: TextInputAction.next,
             onChanged: controller.onEmailChanged,

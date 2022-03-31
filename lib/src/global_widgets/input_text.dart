@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_intermedio_app/src/utils/colors.dart';
 
+import 'custom_form.dart';
+
 class InputText extends StatefulWidget {
   final Widget? prefixIcon;
-  final bool Function(String)? valiator;
+  final String? Function(String)? valiator;
   final bool obscureText;
   final void Function(String)? onChanged;
   final void Function(String)? onSubmitted;
@@ -20,26 +22,41 @@ class InputText extends StatefulWidget {
     this.onChanged,
     this.onSubmitted,
     this.textInputAction,
-    this.keyboardType, this.labelText,
+    this.keyboardType,
+    this.labelText,
   }) : super(key: key);
 
   @override
-  _InputTextState createState() => _InputTextState();
+  InputTextState createState() => InputTextState();
 }
 
-class _InputTextState extends State<InputText> {
-  bool _isOK = false;
+class InputTextState extends State<InputText> {
+  String? _errorText = "a";
   bool _obscureText = false;
+  CustomFormState? _formState;
+
+  String? get getErrorText => _errorText;
 
   @override
   void initState() {
     super.initState();
     _obscureText = widget.obscureText;
+
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      _formState = CustomForm.of(context);
+      _formState?.register(this);
+    });
+  }
+
+  @override
+  void deactivate() {
+    _formState?.remove(this);
+    super.deactivate();
   }
 
   void _validate(String text) {
     if (widget.valiator != null) {
-      _isOK = widget.valiator!(text);
+      _errorText = widget.valiator!(text)!;
       setState(() {});
     }
 
@@ -76,7 +93,7 @@ class _InputTextState extends State<InputText> {
                 onPressed: _onVisibleChanged)
             : Icon(
                 Icons.check_circle,
-                color: _isOK ? primaryColor : Colors.grey,
+                color: _errorText! == "" ? primaryColor : Colors.grey,
               ),
       ),
     );
