@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intermedio_app/src/data/models/user.dart';
 
-class AuthenticationAIP {
+class AuthenticationProvider {
   Future<User?> login(String email, String password) async {
     if (email == "test@test.com" && password == "test") {
       return User(

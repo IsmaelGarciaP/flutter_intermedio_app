@@ -1,10 +1,9 @@
-
 import '../models/user.dart';
-import '../providers/authentication_api.dart';
+import '../providers/authentication_provider.dart';
 import '../repositories/authentication_repository.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
-  final AuthenticationAIP _authenticationAIP;
+  final AuthenticationProvider _authenticationAIP;
 
   AuthenticationRepositoryImpl(this._authenticationAIP);
 
