@@ -55,7 +55,9 @@ class WelcomePage extends StatelessWidget {
                     const SizedBox(width: 20),
                     Expanded(
                       child: RoundedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, Routes.REGISTER);
+                        },
                         label: "Sing Up",
                         textColor: Colors.black,
                         backgroundColor: Colors.white,

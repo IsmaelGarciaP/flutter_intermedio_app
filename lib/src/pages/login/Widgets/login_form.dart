@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../data/models/user.dart';
 import '../../../global_widgets/input_text.dart';
 import '../../../global_widgets/rounded_button.dart';
+import '../../../routes/routes.dart';
 import '../../../utils/fonts_styles.dart';
 
 class LoginForm extends StatelessWidget {
@@ -65,7 +66,9 @@ class LoginForm extends StatelessWidget {
                 "Forgot Password",
                 style: FontSyles.regular,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.FORGOT_PASSWORD);
+              },
             ),
           ),
           const SizedBox(height: 20),

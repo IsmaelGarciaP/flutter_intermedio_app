@@ -1,5 +1,6 @@
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_intermedio_app/src/pages/forgot_password_page/forgot_password.dart';
 import 'package:flutter_intermedio_app/src/pages/login/login_page.dart';
 import 'package:flutter_intermedio_app/src/pages/onboard/onboard_page.dart';
 import 'package:flutter_intermedio_app/src/pages/register/register_page.dart';
@@ -13,6 +14,7 @@ abstract class Pages{
     Routes.ONBOARD: (_) => OnboardPage(),
     Routes.WELCOME:(_) => WelcomePage(),
     Routes.LOGIN:(_) => LoginPage(),
-    Routes.REGISTER:(_) => RegisterPage(),
+    Routes.REGISTER:(_) => const RegisterPage(),
+    Routes.FORGOT_PASSWORD: (_) => const ForgotPasswordPage(),
   };
 }

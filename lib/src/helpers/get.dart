@@ -18,7 +18,7 @@ class Get {
 
   T find<T>({String? tag}) {
     final String key = _getKey(T, tag);
-    if(_data.containsKey(key)){
+    if(!_data.containsKey(key)){
       throw AssertionError("$key not found, meke sure call put first");
     }
     return _data[key];

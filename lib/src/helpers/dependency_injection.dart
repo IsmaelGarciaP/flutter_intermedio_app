@@ -11,6 +11,6 @@ abstract class DependencyInjection {
     );
 
     Get.i.put<AuthenticationRepository>(authenticationRepository);
-    Get.i.put<String>("API_KEY",tag: "apiKey");
+    //Get.i.put<String>("API_KEY",tag: "apiKey");
   }
 }
