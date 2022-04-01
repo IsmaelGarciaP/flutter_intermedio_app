@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intermedio_app/src/ui/pages/home/home_controller.dart';
 import 'package:flutter_intermedio_app/src/ui/pages/home/witgets/home_bottom_bar.dart';
+import 'package:flutter_intermedio_app/src/ui/pages/home/witgets/home_indicator.dart';
+import 'package:flutter_intermedio_app/src/utils/colors.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,12 +27,10 @@ class HomePage extends StatelessWidget {
             bottom: TabBar(
               indicatorColor: Colors.redAccent,
               indicatorWeight: 3,
-              labelColor: Colors.redAccent,
+              labelColor: primaryColor,
               unselectedLabelColor: Colors.black38,
-              indicator: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                border: Border.all(width: 1, color: Colors.redAccent),
+              indicator: HomeTabBarIndicator(
+                size: 8,
               ),
               tabs: const [
                 Tab(
