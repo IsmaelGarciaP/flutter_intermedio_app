@@ -70,6 +70,7 @@ flutter:
     - assets/pages/welcome/icono_facebook.svg
     - assets/pages/welcome/icono_google.svg
     - assets/pages/welcome/icono_apple.svg
+    - assets/pages/forgot_password/forgot.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

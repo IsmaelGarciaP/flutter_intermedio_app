@@ -36,9 +36,11 @@ class LoginPage extends StatelessWidget {
                         "Welcom Back!",
                         style: FontSyles.title.copyWith(fontSize: 22),
                       ),
-                      SvgPicture.asset(
-                        "assets/pages/welcome/welcome1.svg",
-                        width: 200,
+                      Expanded(
+                        child: SvgPicture.asset(
+                          "assets/pages/welcome/welcome1.svg",
+                          width: 200,
+                        ),
                       ),
                       LoginForm(),
                       SocialLogin(),
