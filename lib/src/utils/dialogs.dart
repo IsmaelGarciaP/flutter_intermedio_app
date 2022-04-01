@@ -11,6 +11,7 @@ abstract class Dialogs {
   }) async {
     return showCupertinoDialog(
       context: context,
+      barrierDismissible: dissmisible,
       builder: (_) => WillPopScope(
         onWillPop: () async => dissmisible,
         child: CupertinoAlertDialog(
