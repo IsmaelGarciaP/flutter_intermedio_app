@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_intermedio_app/src/ui/pages/home/home_controller.dart';
+import 'package:flutter_intermedio_app/src/utils/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class HomeBottomBar extends StatelessWidget {
   HomeBottomBar({Key? key}) : super(key: key);
@@ -26,6 +29,10 @@ class HomeBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<HomeController>(context, listen: false);
+    final int currentPage = context.select<HomeController, int>(
+      (_) => _.getCurrentPage,
+    );
     return Container(
       child: SafeArea(
         top: false,
@@ -34,32 +41,58 @@ class HomeBottomBar extends StatelessWidget {
             _items.length,
             (index) {
               final item = _items[index];
-              return Expanded(
-                child: CupertinoButton(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SvgPicture.asset(
-                        item.icon,
-                        width: 35,
-                      ),
-                      Text(
-                        item.label,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                  onPressed: () {},
-                ),
+              return BottomBarItemButton(
+                item: item,
+                isActive: currentPage == index,
+                onPressed: () {
+                  controller.setPage(index);
+                },
               );
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class BottomBarItemButton extends StatelessWidget {
+  const BottomBarItemButton({
+    Key? key,
+    required this.item,
+    required this.isActive,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final _BottomBarItem item;
+  final bool isActive;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final Color color = isActive ? primaryColor : Colors.black;
+    return Expanded(
+      child: CupertinoButton(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SvgPicture.asset(
+              item.icon,
+              width: 35,
+              color: color,
+            ),
+            Text(
+              item.label,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+        onPressed: onPressed,
       ),
     );
   }
