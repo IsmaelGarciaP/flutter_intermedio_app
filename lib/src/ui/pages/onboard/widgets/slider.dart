@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intermedio_app/src/data/models/onboard_item.dart';
-import 'package:flutter_intermedio_app/src/pages/onboard/onboard_controller.dart';
 import 'package:flutter_intermedio_app/src/utils/fonts_styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+
+import '../onboard_controller.dart';
 
 class OnboardSlider extends StatelessWidget {
   @override

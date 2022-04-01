@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/pages/forgot_password_page/widgets/forgot_password_controller.dart';
 import 'package:flutter_intermedio_app/src/utils/dialogs.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../../global_widgets/input_text.dart';
 import '../../../global_widgets/rounded_button.dart';
+import 'forgot_password_controller.dart';
 
 class ForgotPasswordForm extends StatelessWidget {
   const ForgotPasswordForm({Key? key}) : super(key: key);

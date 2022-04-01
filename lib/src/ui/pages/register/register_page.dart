@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/pages/register/Widgets/register_form.dart';
-import 'package:flutter_intermedio_app/src/pages/register/register_controller.dart';
+import 'package:flutter_intermedio_app/src/ui/pages/register/register_controller.dart';
 import 'package:flutter_intermedio_app/src/utils/fonts_styles.dart';
 import 'package:provider/provider.dart';
+
+import 'Widgets/register_form.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);

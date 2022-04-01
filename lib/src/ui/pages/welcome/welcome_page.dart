@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/global_widgets/rounded_button.dart';
 import 'package:flutter_intermedio_app/src/utils/fonts_styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../routes/routes.dart';
 import '../../global_widgets/circule_button.dart';
-import '../../routes/routes.dart';
+import '../../global_widgets/rounded_button.dart';
 
 class WelcomePage extends StatelessWidget {
   @override

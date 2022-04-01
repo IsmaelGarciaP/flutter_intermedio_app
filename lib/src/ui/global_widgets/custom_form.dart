@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/global_widgets/input_text.dart';
+
+import 'input_text.dart';
 
 class CustomForm extends StatefulWidget {
   final Widget child;

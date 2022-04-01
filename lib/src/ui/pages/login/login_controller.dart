@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter_intermedio_app/src/data/repositories/authentication_repository.dart';
 
-import '../../data/models/user.dart';
-import '../../helpers/get.dart';
+import '../../../data/models/user.dart';
+import '../../../helpers/get.dart';
+
 
 class LoginConrtoller extends ChangeNotifier {
   String _email = "", _password = "";

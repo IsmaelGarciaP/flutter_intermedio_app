@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/pages/login/login_controller.dart';
 import 'package:flutter_intermedio_app/src/utils/dialogs.dart';
 import 'package:provider/provider.dart';
 
-import '../../../data/models/user.dart';
+import '../../../../data/models/user.dart';
+import '../../../../routes/routes.dart';
+import '../../../../utils/fonts_styles.dart';
 import '../../../global_widgets/input_text.dart';
 import '../../../global_widgets/rounded_button.dart';
-import '../../../routes/routes.dart';
-import '../../../utils/fonts_styles.dart';
+import '../login_controller.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -29,7 +29,11 @@ class LoginForm extends StatelessWidget {
         ),
       );
     } else {
-      //go to home
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        Routes.HOME,
+        (_) => false,
+      );
     }
   }
 
@@ -45,7 +49,7 @@ class LoginForm extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             labelText: "Email",
             valiator: (t) {
-              return t.contains("@")? "":"Invalid email";
+              return t.contains("@") ? "" : "Invalid email";
             },
             textInputAction: TextInputAction.next,
             onChanged: controller.onEmailChanged,

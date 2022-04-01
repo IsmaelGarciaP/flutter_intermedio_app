@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/global_widgets/input_text.dart';
-import 'package:flutter_intermedio_app/src/global_widgets/rounded_button.dart';
-import 'package:flutter_intermedio_app/src/pages/login/login_controller.dart';
+import 'package:flutter_intermedio_app/src/ui/pages/login/login_controller.dart';
 import 'package:flutter_intermedio_app/src/utils/fonts_styles.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';

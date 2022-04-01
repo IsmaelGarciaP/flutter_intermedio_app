@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../routes/routes.dart';
 import '../../../global_widgets/circule_button.dart';
-import '../../../routes/routes.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({

@@ -71,6 +71,14 @@ flutter:
     - assets/pages/welcome/icono_google.svg
     - assets/pages/welcome/icono_apple.svg
     - assets/pages/forgot_password/forgot.svg
+    - assets/pages/home/icons/avatar.svg
+    - assets/pages/home/icons/bell.svg
+    - assets/pages/home/icons/cart.svg
+    - assets/pages/home/icons/favorite.svg
+    - assets/pages/home/icons/home.svg
+    - assets/pages/home/icons/search.svg
+    - assets/pages/home/icons/settings.svg
+    - assets/pages/home/icons/star.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

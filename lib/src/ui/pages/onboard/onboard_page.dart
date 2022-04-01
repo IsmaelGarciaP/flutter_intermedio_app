@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/pages/onboard/onboard_controller.dart';
-import 'package:flutter_intermedio_app/src/pages/onboard/widgets/bottom_controls.dart';
-import 'package:flutter_intermedio_app/src/pages/onboard/widgets/slider.dart';
+import 'package:flutter_intermedio_app/src/ui/pages/onboard/widgets/bottom_controls.dart';
+import 'package:flutter_intermedio_app/src/ui/pages/onboard/widgets/slider.dart';
 import 'package:provider/provider.dart';
+
+import 'onboard_controller.dart';
 
 class OnboardPage extends StatelessWidget {
   //const OnboardPage({required Key key}): super(key: key);

@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/pages/onboard/onboard_controller.dart';
 import 'package:flutter_intermedio_app/src/utils/colors.dart';
 import 'package:flutter_intermedio_app/src/utils/fonts_styles.dart';
 import 'package:provider/provider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
-import '../../../routes/routes.dart';
+import '../../../../routes/routes.dart';
+import '../onboard_controller.dart';
+
 
 class OnboardControls extends StatelessWidget {
   const OnboardControls({

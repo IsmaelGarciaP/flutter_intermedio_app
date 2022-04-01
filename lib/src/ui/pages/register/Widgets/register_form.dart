@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_intermedio_app/src/global_widgets/custom_form.dart';
-import 'package:flutter_intermedio_app/src/global_widgets/input_text.dart';
-import 'package:flutter_intermedio_app/src/global_widgets/rounded_button.dart';
-import 'package:flutter_intermedio_app/src/pages/register/register_controller.dart';
 import 'package:provider/provider.dart';
-import '../../../utils/dialogs.dart';
+
+import '../../../../utils/dialogs.dart';
+import '../../../global_widgets/custom_form.dart';
+import '../../../global_widgets/input_text.dart';
+import '../../../global_widgets/rounded_button.dart';
+import '../register_controller.dart';
+
 
 class RegisterFrom extends StatelessWidget {
   RegisterFrom({Key? key}) : super(key: key);
